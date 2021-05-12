@@ -22,6 +22,9 @@ describe('Sign Up', () => {
     cy.get('input[type="submit"]')
       .click()
 
+    // Arbitrary wait for the promise to be resolved
+    cy.wait(5000)
+
     cy.get('li')
       .should('contain', 'Some Name - some@email.com - core - git-it')
   })
